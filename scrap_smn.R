@@ -25,7 +25,8 @@ df <- dataclima %>%
          Humedad = V4) %>% 
   group_by(Fecha) %>% 
   summarise(Temp_Min = min(Temp),
-            Temp_Max = max(Temp)) %>% 
+            Temp_Max = max(Temp),
+            Humedad_Media = round(mean(Humedad),2)) %>% 
   mutate(Fecha = dmy(Fecha)) %>% 
   arrange(Fecha)
 
